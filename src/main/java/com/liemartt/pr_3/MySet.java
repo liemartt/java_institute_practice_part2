@@ -9,32 +9,32 @@ public class MySet<T> implements Set<T> {
     private Set<T> set = new HashSet<>();
 
     @Override
-    public int size() {
+    public synchronized int size() {
         return set.size();
     }
 
     @Override
-    public boolean isEmpty() {
+    public synchronized boolean isEmpty() {
         return set.isEmpty();
     }
 
     @Override
-    public boolean contains(Object o) {
+    public synchronized boolean contains(Object o) {
         return set.contains(o);
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public synchronized Iterator<T> iterator() {
         return set.iterator();
     }
 
     @Override
-    public Object[] toArray() {
+    public synchronized Object[] toArray() {
         return new Object[0];
     }
 
     @Override
-    public <T1> T1[] toArray(T1[] a) {
+    public synchronized <T1> T1[] toArray(T1[] a) {
         return (T1[]) set.toArray();
     }
 
@@ -49,7 +49,7 @@ public class MySet<T> implements Set<T> {
     }
 
     @Override
-    public boolean containsAll(Collection<?> c) {
+    public synchronized boolean containsAll(Collection<?> c) {
         return set.containsAll(c);
     }
 

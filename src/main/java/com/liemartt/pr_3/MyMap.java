@@ -10,69 +10,133 @@ public class MyMap<K, V> implements Map<K, V> {
 
     @Override
     public int size() {
-        return map.size();
+        lock.lock();
+        try {
+            return map.size();
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public boolean isEmpty() {
-        return map.isEmpty();
+        lock.lock();
+        try {
+            return map.isEmpty();
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public boolean containsKey(Object key) {
-        return map.containsKey(key);
+        lock.lock();
+        try {
+            return map.containsKey(key);
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public boolean containsValue(Object value) {
-        return map.containsValue(value);
+        lock.lock();
+        try {
+            return map.containsValue(value);
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public V get(Object key) {
-        return map.get(key);
+        lock.lock();
+        try {
+            return map.get(key);
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public V put(K key, V value) {
         lock.lock();
-        map.put((K) key, (V) value);
-        lock.unlock();
-        return value;
+        try {
+            return map.put(key, value);
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public V remove(Object key) {
         lock.lock();
-        V value = map.remove(key);
-        lock.unlock();
-        return value;
+        try {
+            return map.remove(key);
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public void putAll(Map<? extends K, ? extends V> m) {
         lock.lock();
-        map.putAll(m);
-        lock.unlock();
+        try {
+            map.putAll(m);
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public void clear() {
-        map.clear();
+        lock.lock();
+        try {
+            map.clear();
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public Set<K> keySet() {
-        return map.keySet();
+        lock.lock();
+        try {
+            return map.keySet();
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public Collection<V> values() {
-        return map.values();
+        lock.lock();
+        try {
+            return map.values();
+        }
+        finally {
+            lock.unlock();
+        }
     }
 
     @Override
     public Set<Entry<K, V>> entrySet() {
-        return map.entrySet();
+        lock.lock();
+        try {
+            return map.entrySet();
+        }
+        finally {
+            lock.unlock();
+        }
     }
 }
