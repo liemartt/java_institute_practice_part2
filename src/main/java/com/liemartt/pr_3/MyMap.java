@@ -13,8 +13,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.size();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -24,8 +23,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.isEmpty();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -35,8 +33,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.containsKey(key);
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -46,8 +43,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.containsValue(value);
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -57,8 +53,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.get(key);
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -68,8 +63,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.put(key, value);
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -79,8 +73,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.remove(key);
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -90,8 +83,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             map.putAll(m);
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -101,8 +93,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             map.clear();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -112,8 +103,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.keySet();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -123,8 +113,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.values();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -134,8 +123,7 @@ public class MyMap<K, V> implements Map<K, V> {
         lock.lock();
         try {
             return map.entrySet();
-        }
-        finally {
+        } finally {
             lock.unlock();
         }
     }
