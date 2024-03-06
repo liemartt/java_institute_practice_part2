@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b62a9a2-fdf4-4a89-a89d-107033565ab3" name="Changes" comment="chore: update pom.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liemartt/pr_5/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liemartt/pr_5/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +36,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.FactoryMethod.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.com.liemartt.pr_3.Main.executor": "Run",
     "Application.com.liemartt.pr_5.Main.executor": "Run",
@@ -44,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "pr__6",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/JavaLearning/JavaInstitute/src/java_institute_practice_part2/src/main/java/com/liemartt",
     "node.js.detected.package.eslint": "true",
@@ -63,7 +63,20 @@
       <recent name="D:\JavaLearning\JavaInstitute\src\java_institute_practice_part2\src\main\java\com\liemartt" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.liemartt.pr_5.Main">
+  <component name="RunManager" selected="Application.FactoryMethod">
+    <configuration name="FactoryMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.liemartt.pr_6.FactoryMethod" />
+      <module name="java_institute_practice_part2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.liemartt.pr_6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.liemartt.pr_4.Main" />
       <module name="java_institute_practice_part2" />
@@ -105,6 +118,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FactoryMethod" />
         <item itemvalue="Application.com.liemartt.pr_5.Main" />
         <item itemvalue="Application.com.liemartt.pr_3.Main" />
         <item itemvalue="Application.Main" />
