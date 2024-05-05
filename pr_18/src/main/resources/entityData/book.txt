@@ -1,0 +1,1 @@
+[BookDto[id=2, name=Harry Potter, creationDate=2020-02-02, author=null], BookDto[id=1, name=test, creationDate=2022-02-02, author=Author{id=1, name='Artem', middleName='null', lastName='null', dateOfBirth=null}], BookDto[id=3, name=TestBook, creationDate=2024-05-04, author=null], BookDto[id=4, name=TestBook, creationDate=2024-05-04, author=null]]

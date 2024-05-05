@@ -1,0 +1,1 @@
+[Author{id=1, name='Artem', middleName='null', lastName='null', dateOfBirth=null}]

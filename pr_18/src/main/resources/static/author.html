@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Management</title>
+    <!-- Подключаем Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+<h1 class="mb-4">Author Management</h1>
+<div class="mb-4">
+    <label for="authorName">Author Name:</label>
+    <input type="text" id="authorName" class="form-control" placeholder="Enter author name">
+    <button onclick="addAuthor()" class="btn btn-primary mt-2">Add Author</button>
+</div>
+<div class="mb-4">
+    <label for="sortField">Sort Field:</label>
+    <select id="sortField" class="form-control">
+        <option value="name">Name</option>
+        <!-- Добавьте другие поля, если нужно -->
+    </select>
+    <button onclick="sortAuthors('asc')" class="btn btn-primary mt-2">Sort Ascending</button>
+    <button onclick="sortAuthors('desc')" class="btn btn-primary mt-2">Sort Descending</button>
+</div>
+<button onclick="getAllAuthors()" class="btn btn-primary mb-4">Get All Authors</button>
+<ul id="authorList" class="list-group"></ul>
+
+<!-- Подключаем Bootstrap JS и jQuery (необходимо для некоторых компонентов Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    async function addAuthor() {
+        const name = document.getElementById('authorName').value;
+        await fetch('/author?name=' + name, {
+            method: 'POST',
+        });
+        document.getElementById('authorName').value = '';
+    }
+
+    async function deleteAuthor(name) {
+        await fetch('/author?name=' + name, {
+            method: 'DELETE',
+        });
+    }
+
+    async function sortAuthors(order) {
+        const fieldToSort = document.getElementById('sortField').value;
+        const response = await fetch('/authors/' + order + '/' + fieldToSort);
+        const authors = await response.json();
+        displayAuthors(authors);
+    }
+
+    async function getAllAuthors() {
+        const response = await fetch('/authors');
+        const authors = await response.json();
+        displayAuthors(authors);
+    }
+
+    function displayAuthors(authors) {
+        const authorList = document.getElementById('authorList');
+        authorList.innerHTML = '';
+        authors.forEach(author => {
+            const listItem = document.createElement('li');
+            listItem.textContent = author.name;
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.onclick = () => deleteAuthor(author.name);
+            listItem.appendChild(deleteButton);
+            authorList.appendChild(listItem);
+        });
+    }
+</script>
+</body>
+</html>
